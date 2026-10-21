@@ -43,6 +43,24 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
 .stop.flight .event-icon{background:#dfedf8}
 @media(max-width:730px){.flight-section{padding:18px 14px;margin-bottom:23px}.flight-grid{grid-template-columns:1fr}.flight-card{padding:14px}.flight-time{font-size:23px}.flight-section h2{font-size:16px}}
 @media print{.flight-section{margin:8px 0 12px;padding:10px;border-radius:5px}.flight-grid{gap:8px}.flight-card{padding:8px}.flight-route{margin:7px 0}.flight-time{font-size:16px}.flight-topline{margin-bottom:6px}.flight-meta span{font-size:8px;padding:3px 5px}.flight-footnote{margin:5px 0 0}}
+
+/* 공통 쇼핑 정보 블록 - 요일별 타임라인과 독립 */
+.shopping-section{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 28px;padding:21px 24px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.shopping-main{display:flex;align-items:center;gap:18px;min-width:0;flex:1}
+.shopping-emoji{display:grid;place-items:center;flex:none;width:57px;height:57px;border-radius:16px;background:var(--blue-soft);font-size:27px}
+.shopping-eyebrow{font-size:10px;color:#7a8fa4;letter-spacing:.15em;font-weight:820;margin-bottom:5px}
+.shopping-title{font-weight:800;font-size:17px;letter-spacing:-.035em;margin:0 0 6px}
+.shopping-desc{font-size:11px;color:#758799;line-height:1.7;margin:0}
+.shopping-facts{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0}
+.shopping-facts span{font-size:10px;color:#66798b;background:#f3f6f9;border-radius:7px;padding:6px 9px;line-height:1.4}
+.shopping-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:315px}
+.shopping-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-align:center;padding:10px 12px;border-radius:9px;font-size:11px;font-weight:780;white-space:nowrap;border:1px solid #dce4eb;background:white;color:#405b76;transition:background .2s,border-color .2s}
+.shopping-btn:hover{background:#f0f5f9;border-color:#aec4d7}
+.shopping-btn.primary{background:#263f55;border-color:#263f55;color:#fff}
+.shopping-btn.primary:hover{background:#355670}
+@media(max-width:1150px){.shopping-section{align-items:stretch;flex-direction:column;gap:15px}.shopping-actions{justify-content:flex-start;max-width:none;padding-left:75px}}
+@media(max-width:730px){.shopping-section{padding:17px 15px;margin-bottom:22px;gap:13px}.shopping-main{gap:11px;align-items:flex-start}.shopping-emoji{width:43px;height:43px;font-size:21px;border-radius:12px}.shopping-eyebrow{font-size:9px}.shopping-title{font-size:15px}.shopping-desc{font-size:10px}.shopping-facts{gap:5px}.shopping-facts span{font-size:9px;padding:5px 7px}.shopping-actions{padding-left:0;justify-content:stretch}.shopping-btn{flex:1;padding:10px 8px;font-size:10px}}
+@media print{.shopping-section{padding:10px;margin:8px 0 12px;border-radius:6px;gap:8px}.shopping-emoji{width:35px;height:35px;font-size:18px}.shopping-title{font-size:12px}.shopping-desc{font-size:9px}.shopping-facts span{font-size:8px}.shopping-actions{display:none}}
 @media (max-width:1250px){.shell{grid-template-columns:212px minmax(0,1fr)}.rail{padding-left:12px;padding-right:12px}.content{padding-left:27px;padding-right:27px}.topbar{padding-left:27px;padding-right:27px}.columns{grid-template-columns:minmax(0,1fr) 275px;gap:13px}.schedule-card{padding:21px 17px}.sidecard{padding:17px}.day-tab{padding:11px}.kpi{padding:13px}.hero-art{width:48%}}
 @media (max-width:980px){.shell{display:block}.rail{display:none}.content{padding:21px 22px 40px}.topbar{padding:0 22px}.hero{padding:30px;min-height:220px}.hero-art{width:53%;opacity:.6}.columns{grid-template-columns:minmax(0,1fr) 285px}.day-tabs{gap:7px}.day-tab{min-height:82px}.kpi-value{font-size:15px}}
 @media (max-width:730px){.topbar{height:59px;padding:0 16px}.crumb{font-size:10px}.top-actions .desktop-action{display:none}.content{padding:16px 13px 36px}.hero{padding:26px 24px 28px;min-height:225px;border-radius:17px}.hero h1{font-size:46px}.hero-art{width:100%;opacity:.28}.hero-lead{font-size:12px}.hero-fact{font-size:10px;padding:7px 10px}.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0 27px}.kpi{min-height:73px;padding:11px}.kpi-icon{width:35px;height:35px;font-size:16px}.kpi-title{font-size:9px}.kpi-value{font-size:15px}.section-bar h2{font-size:20px}.section-intro{font-size:11px}.day-tabs{grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;margin-bottom:13px}.day-tab{min-height:65px;gap:4px;border-radius:9px;padding:9px 5px;text-align:center;align-items:center}.day-tab .date{font-size:9px}.day-tab .weekday{font-size:14px}.day-tab .day-theme{display:none}.columns{display:flex;flex-direction:column}.schedule-card,.sidecard{width:100%}.schedule-card{padding:20px 12px 14px}.schedule-title{font-size:21px}.schedule-count{font-size:9px}.schedule-subtitle{font-size:11px}.stop{grid-template-columns:48px 13px minmax(0,1fr);gap:6px}.stop-time .tstart{font-size:10px}.stop-time .tend{font-size:9px}.event{padding:13px 10px}.event-title-wrap{gap:7px}.event-icon{width:29px;height:29px;font-size:15px}.event-name{font-size:12px}.event-titleline{align-items:flex-start}.event-extra,.event-note,.event-actions{margin-left:0}.status{padding:4px 5px;font-size:8px}.microchip{font-size:9px}.rightcol{display:grid;grid-template-columns:1fr;gap:12px}.sidecard{padding:19px}.week-card{overflow:hidden;padding:17px 0}.week-card h3,.week-card p{margin-left:15px;margin-right:15px}.week-table-wrap{overflow:auto}.week-table{min-width:590px}.footer{flex-direction:column;gap:5px}.view-actions{flex:none}.view-btn{font-size:10px;padding:7px 9px}.section-intro{max-width:265px}}
@@ -58,6 +76,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
     <div class="nav-label">Trip navigation</div>
     <div class="nav-days" id="sideNav"></div>
     <div class="rail-bottom">
+      <a href="#nearbyShopping">⌖ &nbsp; 돈키호테 · 쇼핑 정보</a>
       <!-- <a href="https://app.notion.com/p/3f8a6574e9b280088324c08520a03d3e" target="_blank" rel="noopener noreferrer">↗ &nbsp; 원본 노션 페이지 열기</a> -->
       <a href="https://2026.iccas.org/program-at-a-glance/" target="_blank" rel="noopener noreferrer">↗ &nbsp; ICCAS 공식 프로그램</a>
       <div class="rail-foot">최종 계획을 기반으로 재구성<br>시간 제안과 예약 확정은 다르게 표시됩니다.</div>
@@ -106,6 +125,28 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
           </article>
         </div>
         <p class="flight-footnote">※ 항공권 화면에 기재된 출발·도착 예정시각입니다. 한국과 일본은 모두 UTC+9이며, 실제 운항 정보·체크인 마감시간·터미널은 출발 전 확인해야 합니다.</p>
+      </section>
+      <!-- 요일 탭과 무관하게 유지되는 삿포로 시내 쇼핑 정보 -->
+      <section class="shopping-section" id="nearbyShopping" aria-labelledby="shoppingTitle">
+        <div class="shopping-main">
+          <div class="shopping-emoji" aria-hidden="true">🛍️</div>
+          <div>
+            <div class="shopping-eyebrow">SAPPORO · SHOPPING SPOT</div>
+            <h2 class="shopping-title" id="shoppingTitle">주변 쇼핑 · MEGA 돈키호테 다누키코지 본점</h2>
+            <p class="shopping-desc">삿포로 시내 다누키코지 상점가에 있는 대형 매장입니다. 방문 날짜를 정하지 않은 자유 쇼핑 장소로, 모든 요일에서 공통으로 확인할 수 있습니다.</p>
+            <div class="shopping-facts">
+              <span>◷ 24시간 영업</span>
+              <span>⌖ 오도리역 도보 약 5분</span>
+              <span>⌖ 스스키노역 도보 약 4분</span>
+              <span>〒060-0063 삿포로시 주오구 미나미3조 니시4-12-1</span>
+            </div>
+          </div>
+        </div>
+        <div class="shopping-actions">
+          <a class="shopping-btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=MEGA%20Don%20Quijote%20Sapporo%20Tanukikoji%20Honten" target="_blank" rel="noopener noreferrer">⌖ 매장 지도</a>
+          <a class="shopping-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hotel%20Emisia%20Sapporo&amp;destination=MEGA%20Don%20Quijote%20Sapporo%20Tanukikoji%20Honten&amp;travelmode=transit" target="_blank" rel="noopener noreferrer">↗ 호텔에서 길찾기</a>
+          <a class="shopping-btn" href="https://www.donki.com/en/store/shop_detail.php?shop_id=555" target="_blank" rel="noopener noreferrer">↗ 공식 매장 정보</a>
+        </div>
       </section>
       <section class="section-bar"><div><div class="section-kicker">PLAN YOUR WEEK</div><h2>요일별 상세 일정</h2><div class="section-intro">이동 소요시간·예상 비용·식당 및 방문지 링크를 함께 정리했습니다.</div></div><div class="view-actions no-print"><button class="view-btn" id="singleViewBtn">하루 보기</button><button class="view-btn" id="weekViewBtn">전체 보기</button></div></section>
       <div class="day-tabs no-print" id="dayTabs"></div>
