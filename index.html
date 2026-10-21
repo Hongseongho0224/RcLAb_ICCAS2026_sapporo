@@ -44,6 +44,32 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
 @media(max-width:730px){.flight-section{padding:18px 14px;margin-bottom:23px}.flight-grid{grid-template-columns:1fr}.flight-card{padding:14px}.flight-time{font-size:23px}.flight-section h2{font-size:16px}}
 @media print{.flight-section{margin:8px 0 12px;padding:10px;border-radius:5px}.flight-grid{gap:8px}.flight-card{padding:8px}.flight-route{margin:7px 0}.flight-time{font-size:16px}.flight-topline{margin-bottom:6px}.flight-meta span{font-size:8px;padding:3px 5px}.flight-footnote{margin:5px 0 0}}
 
+
+/* 요일 선택과 독립된 돈키호테 + 식당 후보 카드 2열 레이아웃 */
+.explore-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px;align-items:stretch;margin:0 0 28px}
+.explore-grid .shopping-section{margin:0;height:100%;display:flex;flex-direction:column;align-items:stretch;gap:19px;padding:21px 20px}
+.explore-grid .shopping-main{align-items:flex-start;flex:0 1 auto;gap:13px}
+.explore-grid .shopping-emoji{width:48px;height:48px;font-size:23px;border-radius:14px}
+.explore-grid .shopping-actions{margin-top:auto;max-width:none;justify-content:flex-start;gap:6px}
+.explore-grid .shopping-btn{font-size:10px;padding:9px 10px}
+.restaurant-section{min-width:0;padding:21px 20px;border:1px solid var(--line);border-radius:18px;background:#fff;display:flex;flex-direction:column;gap:13px}
+.restaurant-header{margin-bottom:1px}
+.restaurant-header .shopping-desc{margin-top:4px}
+.restaurant-options{display:flex;flex-direction:column;gap:8px}
+.restaurant-option{padding:11px 12px;border-radius:11px;background:#f7f9fb;border:1px solid #e9edf2;min-width:0}
+.restaurant-option-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}
+.restaurant-option-top strong{color:#294159;font-weight:800}
+.restaurant-jp{color:#9ba8b5;font-size:9px}
+.restaurant-area{background:#eaf0f6;color:#58738c;padding:4px 7px;border-radius:6px;font-size:9px;font-weight:740;white-space:nowrap}
+.restaurant-option-meta{font-size:10px;color:#68798a;margin-top:6px;line-height:1.5}
+.restaurant-option-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:9px;color:#91a0ae;line-height:1.5}
+.restaurant-links{display:inline-flex;gap:10px;align-items:center}
+.restaurant-links a{color:#456c91;font-weight:800;text-decoration:none}
+.restaurant-links a:hover{text-decoration:underline}
+.restaurant-note{margin:auto 0 0;color:#8b9baa;line-height:1.7;font-size:10px}
+@media(max-width:1150px){.explore-grid{grid-template-columns:1fr;gap:12px}.explore-grid .shopping-actions{padding-left:0}.restaurant-section{gap:11px}}
+@media(max-width:730px){.explore-grid{gap:12px;margin-bottom:22px}.explore-grid .shopping-section{padding:17px 15px;gap:13px}.explore-grid .shopping-emoji{width:43px;height:43px;font-size:21px}.explore-grid .shopping-btn{flex:1}.restaurant-section{padding:17px 15px;border-radius:18px}.restaurant-option-top strong{font-size:11px}.restaurant-option{padding:11px}}
+@media print{.explore-grid{grid-template-columns:1fr 1fr;gap:7px;align-items:stretch;margin:8px 0 12px}.explore-grid .shopping-section,.restaurant-section{padding:10px;border-radius:5px}.restaurant-option{padding:4px 6px;margin:0}.restaurant-option-top,.restaurant-option-meta{font-size:8px}.restaurant-option-bottom,.restaurant-note{display:none}}
 /* 공통 쇼핑 정보 블록 - 요일별 타임라인과 독립 */
 .shopping-section{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 28px;padding:21px 24px;background:#fff;border:1px solid var(--line);border-radius:18px}
 .shopping-main{display:flex;align-items:center;gap:18px;min-width:0;flex:1}
@@ -77,6 +103,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
     <div class="nav-days" id="sideNav"></div>
     <div class="rail-bottom">
       <a href="#nearbyShopping">⌖ &nbsp; 돈키호테 · 쇼핑 정보</a>
+      <a href="#restaurantCandidates">🍽 &nbsp; 식당 후보 · 월/금 저녁</a>
       <!-- <a href="https://app.notion.com/p/3f8a6574e9b280088324c08520a03d3e" target="_blank" rel="noopener noreferrer">↗ &nbsp; 원본 노션 페이지 열기</a> -->
       <a href="https://2026.iccas.org/program-at-a-glance/" target="_blank" rel="noopener noreferrer">↗ &nbsp; ICCAS 공식 프로그램</a>
       <div class="rail-foot">최종 계획을 기반으로 재구성<br>시간 제안과 예약 확정은 다르게 표시됩니다.</div>
@@ -126,7 +153,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
         </div>
         <p class="flight-footnote">※ 항공권 화면에 기재된 출발·도착 예정시각입니다. 한국과 일본은 모두 UTC+9이며, 실제 운항 정보·체크인 마감시간·터미널은 출발 전 확인해야 합니다.</p>
       </section>
-      <!-- 요일 탭과 무관하게 유지되는 삿포로 시내 쇼핑 정보 -->
+      <div class="explore-grid" aria-label="삿포로 자유 방문 정보">
       <section class="shopping-section" id="nearbyShopping" aria-labelledby="shoppingTitle">
         <div class="shopping-main">
           <div class="shopping-emoji" aria-hidden="true">🛍️</div>
@@ -148,6 +175,49 @@ a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:
           <a class="shopping-btn" href="https://www.donki.com/en/store/shop_detail.php?shop_id=555" target="_blank" rel="noopener noreferrer">↗ 공식 매장 정보</a>
         </div>
       </section>
+      <section class="restaurant-section" id="restaurantCandidates" aria-labelledby="restaurantTitle">
+        <div class="restaurant-header">
+          <div class="shopping-eyebrow">SAPPORO · RESTAURANT SHORTLIST</div>
+          <h2 class="shopping-title" id="restaurantTitle">미정 식사 · 식당 후보 목록</h2>
+          <p class="shopping-desc">월요일·금요일 저녁에 참고할 후보입니다. 아직 어느 요일에도 배정하지 않았으며, 예약이 완료되었다는 뜻은 아닙니다.</p>
+        </div>
+        <div class="restaurant-options">
+          <div class="restaurant-option">
+            <div class="restaurant-option-top">
+              <div><strong>오야코 펀치 이자카야</strong><span class="restaurant-jp"> 親子パンチ居酒屋店</span></div>
+              <span class="restaurant-area">신삿포로역</span>
+            </div>
+            <div class="restaurant-option-meta">이자카야 · 해산물·고기 · 코스 약 ¥4,000–5,000</div>
+            <div class="restaurant-option-bottom"><span>JR 신삿포로역 도보 약 5분</span><span class="restaurant-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%A6%AA%E5%AD%90%E3%83%91%E3%83%B3%E3%83%81%E5%B1%85%E9%85%92%E5%B1%8B%E5%BA%97%20%E6%9C%AD%E5%B9%8C%20%E5%8E%9A%E5%88%A5%E4%B8%AD%E5%A4%AE2%E6%9D%A15%E4%B8%81%E7%9B%AE3-43" target="_blank" rel="noopener noreferrer">지도 ↗</a><a href="https://oyakoizakayapanchhi.owst.jp/" target="_blank" rel="noopener noreferrer">매장 안내 ↗</a></span></div>
+          </div>
+          <div class="restaurant-option">
+            <div class="restaurant-option-top">
+              <div><strong>키라쿠</strong><span class="restaurant-jp"> 宴や 紀らく</span></div>
+              <span class="restaurant-area">신삿포로역</span>
+            </div>
+            <div class="restaurant-option-meta">이자카야 · 해산물·회 · 코스 ¥4,400부터</div>
+            <div class="restaurant-option-bottom"><span>신삿포로역 주변</span><span class="restaurant-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%B4%E3%82%84%20%E7%B4%80%E3%82%89%E3%81%8F%20%E6%96%B0%E6%9C%AD%E5%B9%8C%20%E5%8C%97%E6%B5%B7%E9%81%93" target="_blank" rel="noopener noreferrer">지도 ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;amp;query=%E5%AE%B4%E3%82%84%20%E7%B4%80%E3%82%89%E3%81%8F%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">장소 검색 ↗</a></span></div>
+          </div>
+          <div class="restaurant-option">
+            <div class="restaurant-option-top">
+              <div><strong>오쿠시바 쇼텐</strong><span class="restaurant-jp"> 奥芝商店 駅前創成寺</span></div>
+              <span class="restaurant-area">삿포로역 주변</span>
+            </div>
+            <div class="restaurant-option-meta">수프카레 · 메뉴 가격 확인 필요</div>
+            <div class="restaurant-option-bottom"><span>삿포로역 인근</span><span class="restaurant-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A5%A5%E8%8A%9D%E5%95%86%E5%BA%97%20%E9%A7%85%E5%89%8D%E5%89%B5%E6%88%90%E5%AF%BA%20%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">지도 ↗</a><a href="https://tabelog.com/kr/hokkaido/A0101/A010101/1041930/" target="_blank" rel="noopener noreferrer">식당 정보 ↗</a></span></div>
+          </div>
+          <div class="restaurant-option">
+            <div class="restaurant-option-top">
+              <div><strong>유키다루마 본점</strong><span class="restaurant-jp"> 札幌成吉思汗雪だるま 本店</span></div>
+              <span class="restaurant-area">스스키노</span>
+            </div>
+            <div class="restaurant-option-meta">징기스칸 · 양고기 · 메뉴 가격 확인 필요</div>
+            <div class="restaurant-option-bottom"><span>시내 이동 필요</span><span class="restaurant-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AD%E5%B9%8C%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E9%9B%AA%E3%81%A0%E3%82%8B%E3%81%BE%20%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener noreferrer">지도 ↗</a><a href="https://tabelog.com/kr/hokkaido/A0101/A010103/1013166/" target="_blank" rel="noopener noreferrer">식당 정보 ↗</a></span></div>
+          </div>
+        </div>
+        <p class="restaurant-note">※ 가격·영업시간·단체 예약 가능 여부는 방문 전에 다시 확인하세요.</p>
+      </section>
+      </div>
       <section class="section-bar"><div><div class="section-kicker">PLAN YOUR WEEK</div><h2>요일별 상세 일정</h2><div class="section-intro">이동 소요시간·예상 비용·식당 및 방문지 링크를 함께 정리했습니다.</div></div><div class="view-actions no-print"><button class="view-btn" id="singleViewBtn">하루 보기</button><button class="view-btn" id="weekViewBtn">전체 보기</button></div></section>
       <div class="day-tabs no-print" id="dayTabs"></div>
       <div id="viewRoot"></div>
@@ -192,13 +262,13 @@ const URLS={
 };
 function E(time,end,title,type,detail={}){return {time,end,title,type,...detail}}
 const days=[
- {day:'월',date:'10.26',english:'MONDAY',theme:'입국 · 수프카레',subtitle:'ZE 621 항공편으로 10:20 신치토세 도착. 입국심사 후 호텔로 이동하며 저녁은 수프카레를 제안합니다.',summary:'ZE 621 인천 07:40 → 신치토세 10:20 → 호텔 → 수프카레',cost:'¥1,940 + 식사·시내이동',costNote:'공항→숙소 이동비는 사전 계획의 예상 금액 기준입니다. 항공운임·저녁·시내 이동은 별도입니다.',costItems:[['공항 → 숙소 (1인)','¥1,940'],['오쿠시바 쇼텐 식사 (가격대)','¥1,000–1,999'],['숙소 ↔ 삿포로역','미산정']],route:['인천공항(ICN)','신치토세공항(CTS)','호텔 에미시아','삿포로역·수프카레'],notice:'<b>항공편 ZE 621: 10월 26일(월) 인천 07:40 출발 → 신치토세 10:20 도착.</b> 출발·도착 시각은 항공권 기재 정보입니다. 공항에서 호텔로 이동하는 시각과 저녁 식사 시각은 입국심사·수하물 수령 시간에 따라 달라지는 <b>제안 시간</b>입니다.',noticeType:'info',checks:[['ZE 621 · 인천 07:40 출발 / 신치토세 10:20 도착 확인',true],['무료 위탁수하물 15kg / 할인 운임 확인',true],['인천공항 탑승수속 마감시간·터미널 확인'],['호텔 객실 입실 전 짐 보관 가능 여부 확인'],['오쿠시바 쇼텐은 예약 불가 · 단체 대기시간 감안']],events:[
+ {day:'월',date:'10.26',english:'MONDAY',theme:'입국 · 저녁 미정',subtitle:'ZE 621 항공편으로 10:20 신치토세 도착. 입국심사 후 호텔로 이동하며 저녁 식당은 아직 정해지지 않았으며, 입국 후 자유시간을 확보했습니다.',summary:'ZE 621 인천 07:40 → 신치토세 10:20 → 호텔 → 저녁 자유 일정',cost:'¥1,940 + 식사·시내이동',costNote:'공항→숙소 이동비는 사전 계획의 예상 금액 기준입니다. 항공운임·저녁·시내 이동은 별도입니다.',costItems:[['공항 → 숙소 (1인)','¥1,940'],['저녁 식비','미정'],['저녁 이동 교통비','미정']],route:['인천공항(ICN)','신치토세공항(CTS)','호텔 에미시아','저녁 식사(미정)'],notice:'<b>항공편 ZE 621: 10월 26일(월) 인천 07:40 출발 → 신치토세 10:20 도착.</b> 출발·도착 시각은 항공권 기재 정보입니다. 공항에서 호텔로 이동하는 시각과 저녁 식사 시각은 입국심사·수하물 수령 시간에 따라 달라지는 <b>제안 시간</b>입니다.',noticeType:'info',checks:[['ZE 621 · 인천 07:40 출발 / 신치토세 10:20 도착 확인',true],['무료 위탁수하물 15kg / 할인 운임 확인',true],['인천공항 탑승수속 마감시간·터미널 확인'],['호텔 객실 입실 전 짐 보관 가능 여부 확인'],['저녁 식당 후보 확인 및 단체 예약 여부 결정']],events:[
  E('07:40','10:20','항공편 ZE 621 · 인천 → 신치토세','flight',{icon:'✈️',status:'fixed',place:'서울/인천(ICN) → 삿포로/신치토세(CTS)',note:'항공권 기재 예정시각 · 할인 운임 · 무료 위탁수하물 15kg. 한국과 일본은 시차가 없습니다.',map:'New Chitose Airport'}),
  E('10:20','11:20','입국심사 · 위탁수하물 수령','transit',{icon:'🧳',status:'proposed',place:'신치토세 공항',move:'약 1시간 가정 (현장에 따라 변동)',note:'도착 예정시각 이후 입국심사·수하물 수령을 위한 시간입니다. 실제 소요시간에 따라 다음 일정이 밀릴 수 있습니다.',map:'New Chitose Airport'}),
  E('11:20','12:05','신치토세 공항 → 호텔 에미시아','transit',{icon:'🚆',status:'proposed',place:'신치토세 공항 → 신삿포로역 → 호텔',price:'¥1,940 / 인 (사전 예상)',move:'JR·도보 · 약 30–35분 + 환승/대기 여유',note:'11:20 출발은 예시이며 열차 시간표와 수하물 수령 완료 시각에 맞춰 조정해야 합니다.',map:HOTEL}),
  E('12:10','','호텔 도착 · 짐 보관 / 입실 시간 확인','hotel',{icon:'🏨',status:'proposed',place:'Hotel Emisia Sapporo',note:'객실 입실 가능 시각이 확인되지 않았으므로 도착 직후 체크인을 보장하지 않습니다.',map:HOTEL,link:'https://2026.iccas.org/venue/'}),
- E('18:30','19:45','오쿠시바 쇼텐 에키마에 소세이지','food',{icon:'🍛',status:'proposed',place:'수프카레 · 삿포로역 인근',price:'¥1,000–1,999 / 인 (공개 가격대)',move:'호텔 → 삿포로역: JR·도보, 이동요금 별도',note:'월요일 수프카레 후보. 인기 식당으로 예약 불가이며 저녁 영업시간은 17:00–22:00(주문마감 21:00)로 안내됩니다.',map:'スープカリー 奥芝商店 駅前創成寺 札幌',link:URLS.curry}),
- E('식사 후','','숙소 복귀 및 휴식','transit',{icon:'🚆',status:'unknown',place:'삿포로역 → 신삿포로역 → 호텔',move:'JR·도보 · 시간/운임 재확인',note:'저녁 식사 실제 종료 시각에 맞춰 복귀합니다.',map:HOTEL})
+ E('저녁','','저녁 식사 · 장소 미정','food',{icon:'🍽️',status:'unknown',place:'신삿포로 또는 삿포로 시내 · 미정',price:'식비 미정',note:'식당을 아직 선정하지 않았습니다. 상단의 식당 후보 목록에서 식당을 비교할 수 있습니다.'}),
+ E('식사 후','','숙소 복귀 및 휴식','hotel',{icon:'🏨',status:'unknown',place:'호텔 에미시아 삿포로',note:'저녁 장소가 정해지면 이동수단과 복귀 시각을 확정합니다.',map:HOTEL})
  ]},
  {day:'화',date:'10.27',english:'TUESDAY',theme:'학회 · 몬자 · 야경',subtitle:'학회 1일차. 성윤석 포스터 발표 후 단체 저녁 식사와 삿포로 TV타워 야경.',summary:'학회/포스터 → 몬자카오루 → TV타워',cost:'약 ¥7,360 / 인',costNote:'몬자카오루 ¥5,500 + TV타워 일반권 ¥1,200 + 왕복 교통 ¥660. 점심과 추가 주문은 제외.',costItems:[['몬자카오루 코스','¥5,500'],['삿포로 TV타워 일반권','¥1,200'],['호텔 ↔ 시내 교통','약 ¥660'],['별도 예매사이트 타워 티켓 견적','₩7,648/인 (대안 가격)']],route:['호텔/학회장','스스키노·몬자카오루','삿포로 TV타워','호텔'],notice:'공식 학회 <b>웰컴 리셉션 18:00–19:20</b>과 시내 저녁 이동이 겹칩니다. 아래 기본안은 리셉션 대신 식당을 우선한 시간표입니다. 식당 예약은 <b>완료된 것으로 확인되지 않았습니다.</b>',noticeType:'warn',checks:[['몬자카오루 단체 코스(10인 전후) 예약 여부 확인'],['학회 리셉션 참석 여부를 정하면 저녁 시작 시각 확정 가능'],['TV타워 최종 입장 21:50 / 22:00 종료'],['별도 예매사이트의 ₩7,648 티켓은 견적이며, 일반 현장권은 ¥1,200']],variants:[{id:'dinner',label:'저녁 식사 우선'},{id:'reception',label:'리셉션 포함'}],eventSets:{
  dinner:[
@@ -239,12 +309,12 @@ const days=[
  E('18:40','20:20','魚ヤロウ · 이자카야 단체 저녁','food',{icon:'🍶',status:'proposed',place:'삿포로역 앞 · 個室居酒屋 魚ヤロウ',price:'¥2,000–3,000 / 인',note:'단체 저녁 식사 후보입니다. 단체 예약과 식사 시작 시각은 별도로 확인해야 합니다.',link:URLS.izakaya,map:'個室居酒屋 魚ヤロウ 札幌駅前店'}),
  E('20:30','21:00','숙소 복귀','transit',{icon:'🚇',status:'proposed',move:'도자이선 등 대중교통 · 약 30분',price:'¥330',place:'삿포로역 → 신삿포로',map:HOTEL})
  ]},
- {day:'금',date:'10.30',english:'FRIDAY',theme:'발표 · 학회 마지막 날',subtitle:'오전·오후 연구실 발표, 학회 종료 후 편안한 저녁. 교수님 귀국편은 별도 이동으로 표시했습니다.',summary:'김찬우 발표 → (교수님 귀국) → 김태민 발표 → 저녁',cost:'저녁 식비 미정',costNote:'금요일 저녁 식비 잠정 예산은 약 ¥5,000 / 인. 메뉴·장소 미확정이며 별도 합산하지 않았습니다.',costItems:[['금요일 저녁 (예산 상한)','약 ¥5,000'],['교수님 공항 이동 (개별)','약 ¥1,940'],['일반 참가자 현지 이동','미정']],route:['호텔/학회장','신삿포로 식당(미정)'],notice:'금요일 저녁 식사 후보로 검토한 <b>오쿠시바 쇼텐</b>은 실제로는 <b>신삿포로 숙소가 아니라 삿포로역 앞</b>에 있습니다. 숙소 근처 식당을 원한다면 후보를 다시 정해야 합니다. 교수님은 14:00 비행기 예정으로 별도 이동합니다.',noticeType:'info',checks:[['교수님 14:00 출발 항공편에 맞춘 공항 이동시간 확인'],['금요일 저녁: 신삿포로 인근 식당 최종 결정'],['오쿠시바 쇼텐으로 갈 경우 시내 이동시간·교통비 추가 반영']],events:[
+ {day:'금',date:'10.30',english:'FRIDAY',theme:'발표 · 학회 마지막 날',subtitle:'오전·오후 연구실 발표, 학회 종료 후 편안한 저녁. 교수님 귀국편은 별도 이동으로 표시했습니다.',summary:'김찬우 발표 → (교수님 귀국) → 김태민 발표 → 저녁',cost:'저녁 식비 미정',costNote:'금요일 저녁 식비 잠정 예산은 약 ¥5,000 / 인. 메뉴·장소 미확정이며 별도 합산하지 않았습니다.',costItems:[['금요일 저녁 (예산 상한)','약 ¥5,000'],['교수님 공항 이동 (개별)','약 ¥1,940'],['일반 참가자 현지 이동','미정']],route:['호텔/학회장','저녁 식당(미정)'],notice:'<b>금요일 저녁 식당은 아직 정해지지 않았습니다.</b> 상단 식당 후보 목록에서 숙소 근처 또는 시내 식당을 선택할 수 있습니다. 교수님은 별도로 14:00 비행기 예정입니다.',noticeType:'info',checks:[['교수님 14:00 출발 항공편에 맞춘 공항 이동시간 확인'],['금요일 저녁: 신삿포로 인근 식당 최종 결정'],['식당 확정 후 이동시간·교통비 반영']],events:[
  E('09:00','09:15','김찬우 구두발표','conference',{icon:'🎤',status:'fixed',place:'호텔 에미시아 / ICCAS 발표장',link:URLS.conference,map:HOTEL}),
  E('오전 중','14:00 비행','교수님 공항 이동 (개별)','transit',{icon:'✈️',status:'unknown',place:'호텔 에미시아 → 신치토세 공항',price:'약 ¥1,940 / 인',move:'JR·도보 · 약 30–35분 (역간 이동 기준)',note:'교수님 비행기 예정 시각은 14:00입니다. 공항 수속·이동을 감안해 실제 호텔 출발 시각을 확정해야 합니다.',map:'New Chitose Airport'}),
  E('16:40','16:55','김태민 구두발표','conference',{icon:'🎤',status:'fixed',place:'호텔 에미시아 / ICCAS 발표장',link:URLS.conference,map:HOTEL}),
  E('17:30','17:40','ICCAS 폐회식','conference',{icon:'🎓',status:'fixed',place:'호텔 에미시아 / 학회 행사',note:'공식 학회 프로그램 기준.',link:URLS.conference,map:HOTEL}),
- E('18:15','19:30','숙소 인근 간단한 저녁 식사','food',{icon:'🍜',status:'unknown',place:'신삿포로 · 식당 미정',price:'예상 식비: 약 ¥5,000 / 인',note:'앞서 검토한 오쿠시바 쇼텐은 삿포로역 주변이므로 “숙소 인근” 식당으로 보기 어렵습니다. 이동이 필요한 수프카레 대안은 월요일 링크 참고.',map:'新さっぽろ駅 飲食店'})
+ E('18:15','19:30','저녁 식사 · 장소 미정','food',{icon:'🍜',status:'unknown',place:'신삿포로 또는 삿포로 시내 · 식당 미정',price:'잠정 예산: 약 ¥5,000 / 인',note:'식당은 아직 결정되지 않았습니다. 상단 식당 후보 블록에서 종류와 위치를 확인할 수 있습니다.'})
  ]},
  {day:'토',date:'10.31',english:'SATURDAY',theme:'귀국 · ZE 626',subtitle:'ZE 626 항공편 13:00 신치토세 출발, 16:00 인천 도착. 호텔→공항 이동은 여유를 둔 제안 시간입니다.',summary:'호텔 체크아웃 → 신치토세 13:00 ZE 626 → 인천 16:00',cost:'약 ¥1,940 / 인',costNote:'호텔 → 공항 편도 교통비(사전 예상)만 표시. 항공운임·식사·공항 지출은 별도입니다.',costItems:[['숙소 → 공항 편도','¥1,940'],['무료 위탁수하물','15kg / 인'],['공항·기타 지출','미정']],route:['호텔 에미시아','신치토세공항(CTS)','인천공항(ICN)'],notice:'<b>항공편 ZE 626: 10월 31일(토) 신치토세 13:00 출발 → 인천 16:00 도착.</b> 09:30 호텔 출발과 10:15 공항 도착은 <b>제안 시간</b>입니다. 실제 탑승수속 마감 및 JR 운행시간을 확인해 조정하세요.',noticeType:'info',checks:[['ZE 626 · 신치토세 13:00 출발 / 인천 16:00 도착 확인',true],['무료 위탁수하물 15kg / 할인 운임 확인',true],['호텔 체크아웃 및 공항 이동 인원 확정'],['국제선 탑승수속·수하물 접수 마감시간 확인'],['JR 운행 시간·열차편 재확인']],events:[
  E('09:15','09:30','호텔 체크아웃 · 수하물 정리','hotel',{icon:'🧳',status:'proposed',place:'호텔 에미시아 삿포로',note:'공항 이동 전 객실 정리 및 단체 인원 확인을 위한 제안 시간입니다.',map:HOTEL}),
@@ -286,7 +356,7 @@ function sideMarkup(d,i){const r=d.route;
 */
 return `<div class="rightcol">${costMarkup(d,i)}<section class="sidecard"><div class="side-eyebrow">DAY ROUTE</div><h3 class="side-heading">이날의 이동 동선</h3><div class="route">${r.map((t,n)=>`${n?'<span class="route-chevron">›</span>':''}<span class="route-stop">${esc(t)}</span>`).join('')}</div><div class="notequote">구간별 교통수단과 요금은 왼쪽 일정에서 확인할 수 있습니다.</div></section><section class="sidecard"><div class="side-eyebrow">QUICK LINKS</div><h3 class="side-heading">공식 정보</h3><div class="tiny-links"><a href="${URLS.conference}" target="_blank">↗ ICCAS 공식 프로그램</a><a href="${mapUrl(HOTEL)}" target="_blank">↗ 호텔 에미시아 지도</a></div></section></div>`}
 function renderView(){navRender();$('#viewRoot').classList.toggle('week-layout',mode==='week');if(mode==='day'){$('#viewRoot').innerHTML=`<div class="columns">${scheduleMarkup(days[selected],selected)}${sideMarkup(days[selected],selected)}</div>`}else{$('#viewRoot').innerHTML=`<div class="columns"><div>${days.map((d,i)=>scheduleMarkup(d,i)).join('')}</div></div>`}}
-function renderTable(){const costs=['공항 ¥1,940 + 식사·시내이동','약 ¥7,360 / 인','¥8,450–12,450 + 점심','¥2,660–3,660 / 인 (이자카야)','미정 (저녁 예산 약 ¥5,000)','약 ¥1,940 / 인'];const todos=['ZE 621 07:40 출발 · 10:20 도착','리셉션과 식사 충돌','카이센동↔박물관 순서 수정','뱅킷 불참 확정 · 이자카야 예약 확인','교수님 항공편 / 식당 위치','ZE 626 13:00 출발 · 16:00 도착'];$('#weekTable').innerHTML=days.map((d,i)=>`<tr><td>${d.date} (${d.day})</td><td>${esc(d.summary)}</td><td class="summary-money">${esc(costs[i])}</td><td>${esc(todos[i])}</td></tr>`).join('')}
+function renderTable(){const costs=['공항 ¥1,940 + 저녁·시내이동 미정','약 ¥7,360 / 인','¥8,450–12,450 + 점심','¥2,660–3,660 / 인 (이자카야)','미정 (저녁 예산 약 ¥5,000)','약 ¥1,940 / 인'];const todos=['ZE 621 07:40 출발 · 10:20 도착','리셉션과 식사 충돌','카이센동↔박물관 순서 수정','뱅킷 불참 확정 · 이자카야 예약 확인','교수님 항공편 / 식당 위치','ZE 626 13:00 출발 · 16:00 도착'];$('#weekTable').innerHTML=days.map((d,i)=>`<tr><td>${d.date} (${d.day})</td><td>${esc(d.summary)}</td><td class="summary-money">${esc(costs[i])}</td><td>${esc(todos[i])}</td></tr>`).join('')}
 function setDay(i){selected=i;mode='day';renderView();const header=document.querySelector('.section-bar');if(window.scrollY>550)header.scrollIntoView({behavior:'smooth',block:'start'})}
 document.addEventListener('click',e=>{const dayBtn=e.target.closest('[data-day]');if(dayBtn){setDay(Number(dayBtn.dataset.day));return}const vb=e.target.closest('[data-variant]');if(vb){selectedVariants[Number(vb.dataset.index)]=vb.dataset.variant;renderView();return}});
 $('#singleViewBtn').addEventListener('click',()=>{mode='day';renderView()});$('#weekViewBtn').addEventListener('click',()=>{mode='week';renderView()});$('#printBtn').addEventListener('click',()=>{mode='week';renderView();setTimeout(()=>window.print(),160)});
